@@ -2,13 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
+  <meta name="robots" content="noindex,nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>会社概要 | Jack株式会社</title>
-  <meta name="description" content="Jack株式会社の会社概要。設立2024年、福岡県糟屋郡。代表取締役社長・相良大地が率いる、4事業を展開するコングロマリット企業です。" />
+  <title>Jack株式会社 | 地域から世界へ。4本の柱で支える挑戦のパートナー</title>
+  <meta name="description" content="福岡発のコングロマリット、Jack株式会社。通信販売代理店業務・人材採用支援・インフラ保守・越境ECの4事業で、地域の企業と個人の挑戦を支えます。" />
+  <!-- ※デザインカンプ【黒基調 Black Edition】。コピーは content/コピー・SEO.md 確定稿v1を反映 -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Jack株式会社" />
-  <meta property="og:title" content="会社概要 | Jack株式会社" />
-  <meta property="og:image" content="https://jack3.net/ogp/top.png" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:title" content="Jack株式会社 | 地域から世界へ。4本の柱で支える挑戦のパートナー" />
+  <meta property="og:description" content="福岡発のコングロマリット、Jack株式会社。通信販売代理店業務・人材採用支援・インフラ保守・越境ECの4事業で、地域の挑戦を支えます。" />
+  <meta property="og:image" content="https://jack3.net/ogp/top.png" /><!-- 1200x630推奨・実装時に用意 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Jack株式会社","legalName":"Jack株式会社","url":"https://jack3.net/","logo":"https://jack3.net/assets/img/jack-logo.png","foundingDate":"2024-08-20","address":{"@type":"PostalAddress","streetAddress":"別府4丁目3番5号 空港東福ビル202号","addressLocality":"志免町","addressRegion":"福岡県糟屋郡","postalCode":"811-2205","addressCountry":"JP"},"numberOfEmployees":{"@type":"QuantitativeValue","value":50},"taxID":"T5290001107042","contactPoint":{"@type":"ContactPoint","contactType":"customer service","url":"https://jack3.net/contact"}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@400;500&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -17,29 +25,31 @@
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header scrolled">
+  <!-- ============ HEADER → Header.tsx ============ -->
+  <header class="site-header">
     <a class="brand brand-logo" href="index.html" aria-label="Jack株式会社 ホーム"><img src="assets/img/jack-logo.png" alt="Jack株式会社" /></a>
     <nav class="nav" aria-label="グローバルナビ">
       <a href="index.html">HOME</a>
       <a id="megaTrigger" class="has-caret" href="business.html" aria-haspopup="true">BUSINESS
         <svg class="caret" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 1l4 4 4-4"/></svg>
       </a>
-      <a href="company.html" aria-current="page">COMPANY</a>
-      <a href="#">RECRUIT</a>
-      <a href="#">NEWS</a>
+      <a href="company.html">COMPANY</a>
+      <a href="#" aria-disabled="true">RECRUIT</a>
+      <a href="#" aria-disabled="true">NEWS</a>
     </nav>
     <span class="nav-cta"><a href="#">お問い合わせ</a></span>
     <button class="burger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
 
+  <!-- ============ MEGA MENU → MegaMenu.tsx ============ -->
   <div class="mega" id="mega">
     <div class="label" style="color:#fff"><span class="en">Business</span><span class="jp">事業内容</span></div>
-    <div class="mega-grid" id="megaGrid"></div>
+    <div class="mega-grid" id="megaGrid"><!-- JSが配列から描画 --></div>
     <div class="mega-foot"><a class="link-more" href="business.html">事業一覧を見る
       <svg class="arrow" width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h18M14 1l4 4-4 4"/></svg></a></div>
   </div>
 
+  <!-- ============ MOBILE DRAWER → MobileDrawer.tsx ============ -->
   <nav class="drawer" aria-label="モバイルメニュー">
     <a href="index.html"><span class="en">01</span>HOME</a>
     <a href="business.html"><span class="en">02</span>BUSINESS</a>
@@ -50,91 +60,110 @@
   </nav>
 
   <main>
-    <!-- ============ PAGE HERO ============ -->
-    <section class="page-hero">
+    <!-- ============ HERO → Hero.tsx ============ -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-emblem" role="img" aria-label="Jack株式会社 ブランドエンブレム"></div>
       <div class="wrap">
-        <p class="crumb"><a href="index.html">HOME</a> ／ COMPANY</p>
-        <span class="en-big">Company</span>
-        <h1>会社概要 ― Jack株式会社のすべて。</h1>
-        <p class="page-lead">設立2024年、福岡県糟屋郡。4つの事業を通じて、地域に根ざした挑戦を支えるコングロマリットです。</p>
+        <p class="eyebrow line"><span>JACK CORPORATION</span></p>
+        <div class="rule"></div>
+        <h1>
+          <span class="line"><span>地域から世界へ。</span></span>
+          <span class="line"><span>4本の柱で支える、</span></span>
+          <span class="line"><span><em class="kw">挑戦</em>のパートナー。</span></span>
+        </h1>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#">お問い合わせ
+            <svg class="arrow" width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h18M14 1l4 4-4 4"/></svg></a>
+          <a class="btn btn-ghost" href="#business">事業を見る
+            <svg class="arrow" width="12" height="14" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 0v12M1 8l5 5 5-5"/></svg></a>
+        </div>
       </div>
+      <div class="scroll-ind"><span>SCROLL</span><div class="bar"></div></div>
     </section>
 
-    <!-- ============ 代表メッセージ ============ -->
-    <section class="section">
-      <div class="wrap">
-        <div class="label" style="color:var(--ink-700)"><span class="en">Message</span><span class="jp">代表メッセージ</span></div>
-        <div class="message-block reveal">
-          <p>Jack株式会社を創業したのは、「挑戦する人と、その挑戦を支える仕組みをつくりたい」という一念からでした。</p>
-          <p>通信・人材・インフラ・越境EC。一見、多様に見える4つの事業ですが、その根底には共通した問いがあります。「地域で生きる人や企業が、もっと可能性を広げるために、私たちは何ができるか。」</p>
-          <p>2024年の創業以来、福岡・糟屋郡を拠点に、私たちは地道にその問いに向き合い続けています。派手さよりも誠実さ。規模より信頼。その積み重ねが、今日のJack株式会社をつくっています。</p>
-          <p>これからも「地域から世界へ」という言葉を羅針盤に、共に挑戦できる人・企業・地域を広げていきたいと考えています。</p>
-          <p class="sign">代表取締役社長　<b>相良 大地</b></p>
-          <p class="draft-note"><span class="tbc-badge">要確認</span>本メッセージは草案です。代表ご本人の確認・加筆・修正のうえ公開します（content/コピー・SEO.md 4-2 参照）。</p>
+    <!-- ============ ABOUT → About.tsx ============ -->
+    <section class="about wrap">
+      <div class="about-grid">
+        <div class="about-figure reveal"><div class="ph">代表写真プレースホルダ（撮影後差し替え）</div></div>
+        <div>
+          <div class="label" style="color:var(--ink-700)"><span class="en">About</span><span class="jp">私たちについて</span></div>
+          <h2 class="h2 reveal">挑戦する人と企業の、<br>最も近いパートナーへ。</h2>
+          <p class="lead reveal" data-delay="1">設立2024年、福岡・糟屋郡。50名の多様なプロフェッショナルが、通信・人材・インフラ・越境ECの4事業を通じて、地域に根ざした挑戦を支え続けています。</p>
+          <p class="reveal" data-delay="2" style="margin-top:1.8rem"><a class="link-more" href="company.html">会社概要を見る
+            <svg class="arrow" width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h18M14 1l4 4-4 4"/></svg></a></p>
         </div>
       </div>
     </section>
 
-    <!-- ============ 会社概要テーブル ============ -->
-    <section class="section section--alt">
-      <div class="wrap">
-        <div class="label" style="color:var(--ink-700)"><span class="en">Overview</span><span class="jp">会社概要</span></div>
-        <table class="info-table reveal">
-          <tbody>
-            <tr><th>商号</th><td>Jack株式会社</td></tr>
-            <tr><th>代表取締役社長</th><td>相良 大地</td></tr>
-            <tr><th>取締役</th><td>柳川 大空</td></tr>
-            <tr><th>設立</th><td>2024年8月20日</td></tr>
-            <tr><th>従業員数</th><td>50名（※パート・アルバイト含む）</td></tr>
-            <tr><th>所在地</th><td>〒811-2205 福岡県糟屋郡志免町別府4丁目3番5号 空港東福ビル202号</td></tr>
-            <tr><th>事業内容</th><td>通信販売代理店業務 ／ 人材採用支援 ／ インフラ保守（清掃・修理）／ 越境EC事業</td></tr>
-            <tr><th>資本金</th><td class="tbc"><span class="tbc-badge">要確認</span>（一次情報未取得）</td></tr>
-            <tr><th>電話番号</th><td class="tbc"><span class="tbc-badge">要確認</span>（一次情報未取得）</td></tr>
-            <tr><th>メールアドレス</th><td class="tbc"><span class="tbc-badge">要確認</span>（一次情報未取得）</td></tr>
-            <tr><th>事業者登録番号</th><td>T5290001107042</td></tr>
-          </tbody>
-        </table>
+    <!-- ============ NUMBERS → StatsCounter.tsx ============ -->
+    <section class="numbers">
+      <div class="wrap numbers-grid">
+        <div class="stat reveal"><div class="num"><span data-count="50">50</span><span class="unit">名</span></div><div class="cap">従業員数<span class="note-sm">※パート・アルバイト含む</span></div></div>
+        <div class="stat reveal" data-delay="1"><div class="num"><span data-count="4">4</span><span class="unit">事業</span></div><div class="cap">ポートフォリオ</div></div>
+        <div class="stat reveal" data-delay="2"><div class="num"><span data-count="2024">2024</span><span class="unit">年</span></div><div class="cap">福岡発祥・設立</div></div>
       </div>
     </section>
 
-    <!-- ============ 沿革 ============ -->
-    <section class="section">
+    <!-- ============ BUSINESS SHOWCASE → BusinessShowcase.tsx ============ -->
+    <section class="business" id="business">
       <div class="wrap">
-        <div class="label" style="color:var(--ink-700)"><span class="en">History</span><span class="jp">沿革</span></div>
-        <ul class="timeline reveal">
-          <li><span class="yr">2024.08</span><span class="ev">Jack株式会社 設立（福岡県糟屋郡志免町）</span></li>
-          <li><span class="yr tbc">2024.--</span><span class="ev tbc"><span class="tbc-badge">要確認</span>通信販売代理店業務 開始</span></li>
-          <li><span class="yr tbc">2024.--</span><span class="ev tbc"><span class="tbc-badge">要確認</span>インフラ保守（清掃・修理）事業 開始</span></li>
-          <li><span class="yr tbc">----.--</span><span class="ev tbc"><span class="tbc-badge">要確認</span>人材採用支援事業 開始</span></li>
-          <li><span class="yr tbc">----.--</span><span class="ev tbc"><span class="tbc-badge">要確認</span>越境EC事業 参入</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ アクセス ============ -->
-    <section class="section section--alt">
-      <div class="wrap">
-        <div class="label" style="color:var(--ink-700)"><span class="en">Access</span><span class="jp">アクセス</span></div>
-        <div class="access-card reveal">
-          <p class="addr">〒811-2205<br>福岡県糟屋郡志免町別府4丁目3番5号<br>空港東福ビル202号</p>
-          <p class="note" style="margin-top:1.2rem"><span class="tbc-badge">要確認</span>最寄り駅・バス停・所要時間等</p>
+        <div class="biz-head">
+          <div>
+            <div class="label"><span class="en">Business</span><span class="jp">事業内容</span></div>
+            <h2 class="h2 reveal">4本の柱が、<br>地域の挑戦を世界へ。</h2>
+          </div>
+          <p class="lead reveal" data-delay="1" style="color:rgba(255,255,255,.6)">繋ぐ・育てる・護る・越える。それぞれが独立した強みを持ちながら、ひとつの使命のもとに結ばれています。</p>
+        </div>
+        <div class="biz-grid">
+          <div class="biz-list reveal" id="bizList"><!-- JSが配列から描画 --></div>
+          <div class="biz-panel reveal" data-delay="1" id="bizPanel"><!-- JSが配列から描画 --></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT CTA ============ -->
+    <!-- ============ STRENGTH / PARTNERS → ClientLogos.tsx ============ -->
+    <section class="strength">
+      <div class="wrap">
+        <div class="label" style="color:var(--ink-700)"><span class="en">Our Partners</span><span class="jp">取引実績</span></div>
+        <div class="logos reveal">
+          <div class="logo-ph">取引先ロゴ ①</div><div class="logo-ph">取引先ロゴ ②</div>
+          <div class="logo-ph">取引先ロゴ ③</div><div class="logo-ph">取引先ロゴ ④</div>
+        </div>
+        <p class="note">※取引先の掲載は各社の許諾確認後に更新いたします。</p>
+        <div class="global-band reveal" data-delay="1">
+          <p class="big">福岡から、世界へ。</p>
+          <a class="link-more" href="business.html#global-ec">越境EC事業を見る
+            <svg class="arrow" width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h18M14 1l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWS → NewsLatest.tsx ============ -->
+    <section class="news wrap">
+      <div class="label" style="color:var(--ink-700)"><span class="en">Latest News</span><span class="jp">最新情報</span></div>
+      <div class="news-grid">
+        <a class="news-card reveal" href="#"><time>2026.06.25</time><span class="tag">採用情報</span><h4>新たな仲間を募集しています（仮テキスト・本番CMS連携）</h4></a>
+        <a class="news-card reveal" data-delay="1" href="#"><time>2026.06.20</time><span class="tag">事業</span><h4>越境EC事業の取り扱い領域を拡大します（仮テキスト）</h4></a>
+        <a class="news-card reveal" data-delay="2" href="#"><time>2026.06.15</time><span class="tag">お知らせ</span><h4>コーポレートサイトをリニューアルしました（仮テキスト）</h4></a>
+      </div>
+      <a class="link-more" href="#">ニュース一覧
+        <svg class="arrow" width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h18M14 1l4 4-4 4"/></svg></a>
+    </section>
+
+    <!-- ============ RECRUIT CTA → RecruitBanner.tsx ============ -->
     <section class="recruit">
       <div class="recruit-emblem" role="img" aria-label="Jack株式会社 ブランドエンブレム"></div>
       <div class="wrap inner">
         <div class="label" style="color:#fff;justify-content:center"><span class="en">Recruit</span><span class="jp">採用情報</span></div>
-        <h2 class="reveal">あなたの<span class="kw">挑戦</span>を、<br>ここから始めよう。</h2>
+        <h2 class="reveal">あなたの<em class="kw">挑戦</em>を、<br>ここから始めよう。</h2>
         <a class="btn btn-primary reveal" data-delay="1" href="#">採用情報を見る
           <svg class="arrow" width="20" height="10" viewBox="0 0 20 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5h18M14 1l4 4-4 4"/></svg></a>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ============ FOOTER → Footer.tsx ============ -->
   <footer class="site-footer">
     <div class="wrap">
       <div class="foot-top">

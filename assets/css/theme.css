@@ -1,0 +1,60 @@
+/* ============================================================
+   Jack株式会社 — デザイントークン【黒基調 / Black Edition】
+   ベース: リッチブラック × ダークチャコール
+   メインアクセント: シャンパンゴールド / サブアクセント: ディープクリムゾン
+   ※デザインカンプ(ネイビー版)とは別データ。トークン値の差し替えのみで成立する設計。
+   ============================================================ */
+:root {
+  /* --- Color: リッチブラック × ダークチャコール × シャンパンゴールド × クリムゾン --- */
+  --navy-900: #0A0A0A;   /* ベース背景（リッチブラック） */
+  --navy-800: #1A1A1A;   /* サブベース（ダークチャコール：表面/セクション） */
+  --navy-700: #202020;   /* 一段持ち上げた面（カード/パネル） */
+  --navy-600: #2A2A2A;
+  --ivory-50: #141414;   /* 交互配色用のもう一段の面 */
+  --ivory-100: #0A0A0A;  /* body背景＝ベース */
+
+  --gold-500: #D6C5A1;   /* メインアクセント：シャンパンゴールド */
+  --gold-300: #E6DAC0;   /* ゴールド淡（ハイライト） */
+
+  --crimson:        #8E1628;  /* サブアクセント：ディープクリムゾン（面・罫） */
+  --crimson-bright: #C21E34;  /* クリムゾン・ハイライト（キーワード/グロー）※人材紹介デッキのトーン参照 */
+
+  --ink-700: #F5F5F5;                    /* 基本文字：オフホワイト */
+  --ink-500: rgba(245, 245, 245, .58);   /* 弱めの文字 */
+
+  --line:       rgba(214, 197, 161, .24);  /* 極細ゴールド罫 */
+  --line-light: rgba(245, 245, 245, .12);  /* 極細ライト罫 */
+
+  /* --- Typography --- */
+  --f-serif-en: "Cormorant Garamond", "Noto Serif JP", serif;
+  --f-serif-jp: "Noto Serif JP", serif;
+  --f-sans-en:  "DM Sans", "Noto Sans JP", system-ui, sans-serif;
+  --f-sans-jp:  "Noto Sans JP", system-ui, sans-serif;
+
+  --text-display: clamp(3rem, 8vw, 6.5rem);
+  --text-h2:      clamp(2.2rem, 5vw, 3.6rem);
+  --text-h3:      clamp(1.5rem, 3vw, 2.2rem);
+  --text-label:   .75rem;
+  --text-body:    1rem;
+  --text-small:   .875rem;
+
+  /* --- Spacing scale --- */
+  --space-1: .5rem;  --space-2: 1rem;   --space-3: 1.5rem;
+  --space-4: 2.5rem; --space-5: 4rem;   --space-6: 7rem;
+  --space-7: 11rem;
+  --maxw: 1280px;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur:  .6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
